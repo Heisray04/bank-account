@@ -20,7 +20,7 @@ while True:
 actions()
 while True:
     print(('-' * 100) + "\n=== NOTE: ONLY NUMBERS ARE REQUIRED IN ALL INPUT FIELDS WITHOUT (Y/N) OPTION! =====")
-    print("What would you like to do?\n1. Deposit\n2. Withdraw\n3. Check Balance")
+    print("What would you like to do? 1, 2, or 3")
 
     # Error handler. Detects non-positive integer input and outputs a custom error message.
     # Runs the remaining code if no errors are detected.
