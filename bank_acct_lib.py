@@ -3,28 +3,28 @@ import time
 
 # A template for a bank account.
 class BankAccount:
-    '''Handles users bank account'''
+    '''Handles a user's bank account'''
     def __init__(self, balance):
         self.__balance = balance
 
     def _get_time(self):
         self._date_time = datetime.now()
-        self._date = self._date_time.strftime("%I:%M")
-        self._day = self._date_time.strftime("%a, %b %d, %Y")
-        self._label = 'AM' if (self._date_time.hour < 12) else 'PM'
-        self._text = f'at {self._date} {self._label} on {self._day}'
+        self._time = self._date_time.strftime("%I:%M")
+        self._date = self._date_time.strftime("%a, %d %B, %Y")
+        self._am_pm = 'AM' if (self._date_time.hour < 12) else 'PM'
+        self._msg = f'at {self._time} {self._am_pm} on {self._date}'
 
     def deposit(self, amount):
         self._get_time()
         if amount > 0:
             self.__balance += amount
-            return f">>> Successfully deposited ₦{amount:,} {self._text}."
+            return f">>> Successfully deposited ₦{amount:,} {self._msg}."
 
     def withdraw(self, amount):
         self._get_time()
         if self.__balance >= amount:
             self.__balance -= amount
-            return f"You successfully withdrew ₦{amount:,} {self._text}."
+            return f"You successfully withdrew ₦{amount:,} {self._msg}."
         else:
             return "--- Insufficient balance! ---"
 
