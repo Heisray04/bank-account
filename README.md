@@ -1,6 +1,6 @@
 # Bank Account
 
-A simple bank acccount program created for one user, that simulates the basic concepts of how mobile banking works.
+A simple bank account program created for a single user that simulates the basic concepts of mobile banking.
 
 ## Features
 
@@ -15,11 +15,16 @@ A simple bank acccount program created for one user, that simulates the basic co
 ## What I learnt
 
 - Functions
-- OOP
-- Time module for pauses `import time`
+- Time module for pauses
+  > `import time`
 - Error handling (Exceptions)
-- Creating and importing modules
+- How to create and import a custom module with its contents
+  > `bank_acct_lib`
+
+### OOP
+- Object Oriented Programming
+- Working with classes
 
 ## Status
 
-Completed
+Completed ✔
