@@ -8,13 +8,14 @@ open_acct = input('\nWill you like to open an account with us? (y/n): ').strip()
 if open_acct == 'y': pass
 else: exit()
 
-try:
-    money = int(input("\nInitial deposit amount:\n₦"))
-    account = BankAccount(money)
-
-except ValueError:
-    print('--- Not A Number! ---')
-    exit()
+while True:
+    try:
+        money = int(input("\nInitial deposit amount(without ',' or '.'):\n₦"))
+        account = BankAccount(money)
+        break
+    
+    except ValueError:
+        print('--- Not A Number! ---')
 
 actions()
 while True:
@@ -22,7 +23,7 @@ while True:
     print("What would you like to do?\n1. Deposit\n2. Withdraw\n3. Check Balance")
 
     # Error handler. Detects non-positive integer input and outputs a custom error message.
-    # Runs the remaining part of the code if no error is detected.
+    # Runs the remaining code if no errors are detected.
     try:
         select = int(input('Pick a number: '))
 
@@ -40,8 +41,8 @@ while True:
                 dynam_disp(select)
                 print(account.deposit(depo_amt))
                 transaction()                
-            except ValueError:
-                print('--- Numbers Only! ---')
+            except (ValueError, TypeError) as VT:
+                print(f'ERROR! {VT}\n--- Numbers Only! ---')
                 continue
         elif select == 2:
             try:
@@ -52,8 +53,8 @@ while True:
                 dynam_disp(select)
                 print(account.withdraw(with_amt))
                 transaction()
-            except ValueError:
-                print('--- Numbers Only! ---')
+            except (ValueError, TypeError) as VT:
+                print(f'ERROR! {VT}\n--- Numbers Only! ---')
                 continue
         elif select == 3:
             print("Here's your current account balance:")
