@@ -54,11 +54,11 @@ def transaction():
     print(' ' * 50, end="\r")
     print('Thanks for banking with us.')
 
-def dynam_disp(sel):
+def dynam_disp(option):
     """ Creates a dynamic display while depositing or withdrawing. """
     for i in range(0, 6):
-        if sel == 1:
+        if option == 1:
             print("Depositing" + ('.'*i), end='\r')
-        elif sel == 2:
+        elif option == 2:
             print("Withdrawing" + ('.'*i), end='\r')
         time.sleep(1)

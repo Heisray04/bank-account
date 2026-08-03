@@ -25,41 +25,41 @@ while True:
     # Error handler. Detects non-positive integer input and outputs a custom error message.
     # Runs the remaining code if no errors are detected.
     try:
-        select = int(input('Pick a number: '))
+        number = int(input('Pick a number: '))
 
     except ValueError:
         print('--- Numbers Only! ---')
         continue
 
     else:
-        if select == 1:
+        if number == 1:
             try:
                 depo_amt = int(input('How much are you depositing?: ₦'))
                 if depo_amt < 0:
                     print('--- Unable to continue with the transaction ---')
                     continue
-                dynam_disp(select)
+                dynam_disp(number)
                 print(account.deposit(depo_amt))
                 transaction()                
             except (ValueError, TypeError) as VT:
                 print(f'ERROR! {VT}\n--- Numbers Only! ---')
                 continue
-        elif select == 2:
+        elif number == 2:
             try:
                 with_amt = int(input('Withdrawal amount: ₦'))
                 if with_amt < 0:
                     print('--- Unable to continue with the transaction ---')
                     continue
-                dynam_disp(select)
+                dynam_disp(number)
                 print(account.withdraw(with_amt))
                 transaction()
             except (ValueError, TypeError) as VT:
                 print(f'ERROR! {VT}\n--- Numbers Only! ---')
                 continue
-        elif select == 3:
+        elif number == 3:
             print("Here's your current account balance:")
             print(account.get_balance())
-        elif select > 3 or select < 1:
+        elif number > 3 or number < 1:
             print("--- Out Of Given Range! ---")
             continue
 
