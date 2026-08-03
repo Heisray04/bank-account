@@ -10,16 +10,16 @@ A simple bank acccount program created for one user, that simulates the basic co
 
 ## Technologies
 
-- > Python
+> Python programming language
 
 ## What I learnt
 
 - Functions
 - OOP
-- Time module for pauses
+- Time module for pauses `import time`
 - Error handling (Exceptions)
 - Creating and importing modules
 
 ## Status
 
-- Completed
+Completed
